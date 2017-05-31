@@ -1,0 +1,7 @@
+#!/bin/sh
+
+API_END_POINT='https://cymon.io/api/nexus/v1/ip/'
+IP="$1"
+TARGET=$API_END_POINT$IP
+
+http --body GET $TARGET

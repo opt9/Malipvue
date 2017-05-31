@@ -1,0 +1,8 @@
+#!/bin/sh
+
+API_END_POINT='https://cymon.io/api/nexus/v1/url/'
+TMP=$(node -p "encodeURIComponent('$1')")
+URL=$(node -p "encodeURIComponent('$TMP')")
+TARGET=$API_END_POINT$URL
+
+http --body GET $TARGET
